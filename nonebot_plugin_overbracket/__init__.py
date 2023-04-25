@@ -1,7 +1,15 @@
 import random
 from nonebot import on_message, get_driver
 from nonebot.adapters import Event
+from nonebot.plugin import PluginMetadata
 from .config import Config
+
+__plugin_meta__ = PluginMetadata(
+    name="通括膨胀",
+    description="让你的机器人随机发括号",
+    usage="[请查阅插件介绍文档]",
+    config=Config
+)
 
 global_config = get_driver().config
 parsed_config = Config.parse_obj(global_config)
