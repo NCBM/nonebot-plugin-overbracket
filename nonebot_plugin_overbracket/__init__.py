@@ -20,6 +20,10 @@ obr = on_message(priority=25, block=False)
 @obr.handle()
 async def make_lbracket(event: Event):
     msg = event.get_message().extract_plain_text()
+    
+    if len(msg) < 1:
+        return None
+    
     last = msg[-1]
     if parsed_config.overbracket_nohalfsize and last in "([{":
         text = "半角异端！"
