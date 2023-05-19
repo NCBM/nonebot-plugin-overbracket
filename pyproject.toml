@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-overbracket"
-version = "0.1.1"
+version = "0.1.2"
 description = "NoneBot2 插件 通括膨胀——泛滥的括号"
 authors = [
     {name = "HivertMoZara", email = "worldmozara@163.com"},

@@ -1,14 +1,31 @@
 import random
-from nonebot import on_message, get_driver
+from nonebot import on_message, get_driver, __version__ as nbver
 from nonebot.adapters import Event
 from nonebot.plugin import PluginMetadata
 from .config import Config
+
+_extra_meta_source = {
+    "type": "application",
+    "homepage": "https://github.com/NCBM/nonebot-plugin-overbracket"
+}
+
+if (
+    not nbver
+    or not nbver.startswith("2.0.0")
+    or not (_suf := nbver[5:])
+    or _suf[0] not in "abr"
+    or (_suf.startswith("rc") and int(_suf[2:]) > 4)
+):
+    _extra_meta = _extra_meta_source
+else:
+    _extra_meta = {"extra": _extra_meta_source}
 
 __plugin_meta__ = PluginMetadata(
     name="通括膨胀",
     description="让你的机器人随机发括号",
     usage="[请查阅插件介绍文档]",
-    config=Config
+    config=Config,
+    **_extra_meta
 )
 
 global_config = get_driver().config
