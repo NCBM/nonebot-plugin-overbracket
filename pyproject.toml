@@ -1,12 +1,12 @@
 [project]
 name = "nonebot-plugin-overbracket"
-version = "0.1.2"
+version = "0.2.0"
 description = "NoneBot2 插件 通括膨胀——泛滥的括号"
 authors = [
     {name = "HivertMoZara", email = "worldmozara@163.com"},
 ]
 license = {text = "MIT"}
-dependencies = ["nonebot2>=2.0.0b1"]
+dependencies = ["nonebot2>=2.2.0"]
 requires-python = ">=3.8"
 readme = "README.md"
 

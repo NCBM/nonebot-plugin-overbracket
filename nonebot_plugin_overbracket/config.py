@@ -1,7 +1,7 @@
-from pydantic import BaseModel, Extra
+from pydantic import BaseModel
 
 
-class Config(BaseModel, extra=Extra.ignore):
+class Config(BaseModel, extra="ignore"):
     """Plugin Config Here"""
 
     overbracket_base_chance: float = 0.12
